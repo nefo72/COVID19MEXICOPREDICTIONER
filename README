@@ -1,4 +1,4 @@
-Esta es una red secuencial simple para tratar de predecir el dato de número de contagiados de COVID19 en Mexico que se da a las 19:00 horas por parte del gobierno.
+Esta es una red secuencial simple para tratar de predecir el dato de número de contagiados de COVID19 en Mexico y que se da a las 19:00 horas por parte del gobierno.
 
 **Para ejecutar la prediccion:**
 
@@ -16,32 +16,45 @@ jupyter notebook COVID-19.ipynb
 
 **4)** Ejecutar todos los cuadros.
 
-Creado por Juan Felipe Huan Lew Yee, Neftalí Isaí Rodríguez Rojas y Jorge Martín del Campo Ramírez.
+Creado por Juan Felipe Huan Lew Yee, Isaí Neftalí Rodríguez Rojas y Jorge Martín del Campo Ramírez.
 
 **********************************Fuente de datos*******************************
 
-Superficie (km2) https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_area
+Superficie (km2), https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_area
 
-Población https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population
+Población, https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population
 
-Continente https://simple.wikipedia.org/wiki/List_of_countries_by_continents
-PIB (Millones de dolares) https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal) según estimados del 2019 del fondo monetario internacional, excepto por los siguientes paises:
+Continente, https://simple.wikipedia.org/wiki/List_of_countries_by_continents
+
+PIB (Millones de dolares), https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal) según estimados del 2019 del fondo monetario internacional, excepto por los siguientes paises:
 -Datos del 2018 del banco mundial para Andorra,Cabo Verde,Cuba,Saint Vincent and the Grenadines,West Bank and Gaza,Guinea-Bissau
 -Datos del 2017 de las naciones unidas para Monaco
 -Uso datos de Google de 2015 para Liechtenstein
 -Quite Holy See por PIB
 
-Porcentaje de PIB invertido en salud https://countryeconomy.com/government/expenditure/health
+Porcentaje de PIB invertido en salud ,https://countryeconomy.com/government/expenditure/health
 - Quite Liechtenstein, Taiwan, West Bank and Gaza y Kosovo por no encontrar dato
 
 **********************************Descripción de archivos*******************************
-COVID-19.ipynb Version en Jupyter Notebook de la red
-COVID-19.py Version de la red (la misma que en el Jupyter Notebook) dentro de un for para repetir la predicción muchas veces y obtener mean, std
-database_confirmed.csv Base de datos del Hospital John Hopkins con el numero de casos históricos procesada para tener informacion global de paises, se crea automáticamente al ejecutar processing.sh
-database.csv Base de datos con el numero de casos históricos e informacion adicional como superficie, poblacion, PIB, etc... se crea automáticamente al ejecutar COVID-19.ipynb o COVID-19.py
-database_prediction.csv Base de datos con la informacion del pais a predecir, particularmente México, aunque se puede cambiar el país,  se crea automáticamente al ejecutar COVID-19.ipynb o COVID-19.py
-preprocessing.py Script de pyhon para juntar la base de datos del hospital John Hopkins con los datos de propiedades_por_pais.csv, se ejecuta automáticamente al usar processing.sh
-processing.sh Descarga la base de datos del hospital John Hopkins y ejecuta varios scripts para su tratamiento.
-propiedades_por_pais.csv Base de datos con propiedades como superficie, poblacion, PIB, etc... fue creada con la informacion de la carpeta extractor_de_propiedades
+
+
+Analizador de propiedades, Carpeta que contiene los datos sin procesar como la población y el PIB de cada pais, en archivos tipo csv, así como los scrips:  analizador_de_propiedades.py que conjunta los datos anteriores y filter.py  para revisar los paises que se encuentren en  poblacion.csv
+
+COVID-19.ipynb, Version en Jupyter Notebook de la red.
+
+COVID-19.py,  Version de la red (la misma que en el Jupyter Notebook) dentro de un "for", para repetir la predicción muchas veces y obtener el promedio "mean" y  la desviacion estandar "std".
+
+database.csv, Base de datos con el numero de casos históricos e informacion adicional como superficie, poblacion, PIB, etc... se crea automáticamente al ejecutar COVID-19.ipynb o COVID-19.py
+
+database_confirmed.csv, Base de datos del Hospital John Hopkins con el numero de casos históricos procesada para tener informacion global de paises, se crea automáticamente al ejecutar processing.sh
+
+database_prediction.csv, Base de datos con la informacion del pais a predecir, particularmente México, aunque se puede cambiar el país, se crea automáticamente al ejecutar COVID-19.ipynb o COVID-19.py
+
+preprocessing.py, Script de pyhon para juntar la base de datos del hospital John Hopkins con los datos de propiedades_por_pais.csv, se ejecuta automáticamente al usar processing.sh
+
+processing.sh, Descarga la base de datos del hospital John Hopkins y ejecuta varios scripts para su tratamiento.
+
+propiedades_por_pais.csv, Base de datos con propiedades como superficie, poblacion, PIB, etc... fue creada con la informacion de la carpeta extractor_de_propiedades
+
 time_series_covid19_confirmed_global.csv Base de datos del hospital John Hopkins, se descarga automáticamente al ejecutar processing.sh
 
