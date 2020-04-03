@@ -31,7 +31,7 @@ import numpy as np
 
 predicciones_por_dia = []
 valores_por_dia = []
-for dia_a_predecir in range(37,38):
+for dia_a_predecir in range(4,37):
     predicciones = []
     for i in range(40):
 
@@ -452,4 +452,4 @@ for dia_a_predecir in range(37,38):
 
 for i,prediccion in enumerate(predicciones_por_dia):
     a = np.asarray(prediccion)
-    print("dia:",i+37,"mean:",a.mean(),"min",a.min(),"max",a.max(),"std:",a.std(),"val:",valores_por_dia[i])
+    print("dia:",i+4,"mean:",a.mean(),"min",a.min(),"max",a.max(),"std:",a.std(),"val:",valores_por_dia[i])
